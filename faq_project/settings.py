@@ -105,6 +105,11 @@ CACHES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
 if os.getenv('ENVIRONMENT') == 'development':
     DATABASES = {
         'default': {
