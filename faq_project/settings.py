@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'faq_project.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-'default': dj_database_url.parse(os.getenv('DATABASE_URL', 'postgresql://faq_storage_user:iQSNG24QS7sjTCxMbN4D0YVoyq8zSzCP@dpg-cufiet5umphs73b2u3v0-a/faq_storage'))
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
 }
 
 # Password validation
@@ -116,3 +116,6 @@ else:
     DATABASES = {
         'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
+
+import os
+print(os.getenv('DATABASE_URL'))  # Debug: Print the DATABASE_URL to see what it's set to
