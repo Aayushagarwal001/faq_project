@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-ge@dsbx-$9+=g2@k-e#vkkg0ee
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['faq-project-rwxh.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -61,18 +61,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'faq_project.wsgi.application'
 
 # Database
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', '5432'),
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-    }
+'default': dj_database_url.parse(os.getenv('DATABASE_URL', 'postgresql://faq_storage_user:iQSNG24QS7sjTCxMbN4D0YVoyq8zSzCP@dpg-cufiet5umphs73b2u3v0-a/faq_storage'))
 }
 
 # Password validation
@@ -112,3 +104,15 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     }
 }
+
+if os.getenv('ENVIRONMENT') == 'development':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+    }
