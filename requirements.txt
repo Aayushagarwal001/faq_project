@@ -32,3 +32,7 @@ sqlparse==0.5.3
 typing_extensions==4.12.2
 tzdata==2025.1
 whitenoise==6.8.2
+psycopg2>=2.9
+Django>=3.0
+<other necessary packages>
+
