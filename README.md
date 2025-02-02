@@ -85,14 +85,6 @@ This is a backend project for managing FAQs with multi-language translation supp
 
 ---
 
-## **Environment Variables**
-Ensure you have a `.env` file with the following variables if needed:
-```
-DEBUG=True
-SECRET_KEY=your_secret_key
-DATABASE_URL=your_database_url
-```
-
 ---
 
 ## **Caching**
