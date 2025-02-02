@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 1fa3eed (Faq Project Backed)
 ---
 
 # **FAQ Backend Project**
