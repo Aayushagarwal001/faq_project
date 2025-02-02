@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()  # This loads environment variables from .env file
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -76,12 +80,20 @@ WSGI_APPLICATION = 'faq_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),  # Render provides this environment variable
+        'USER': os.getenv('DB_USER'),  # Render provides this environment variable
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Render provides this environment variable
+        'HOST': os.getenv('DB_HOST'),  # Render provides this environment variable
+        'PORT': os.getenv('DB_PORT', '5432'),  # Default PostgreSQL port
     }
 }
+
+
 
 
 # Password validation
