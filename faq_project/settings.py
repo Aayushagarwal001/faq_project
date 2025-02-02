@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-ge@dsbx-$9+=g2@k-e#vkkg0ee
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'faqbackendproject.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'faq-project-rwxh.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
