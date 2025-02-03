@@ -94,10 +94,6 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Required for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # Add WhiteNoise
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://faq-project-rwxh.onrender.com"
-]
-
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
