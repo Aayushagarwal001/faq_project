@@ -6,6 +6,8 @@ https://github.com/user-attachments/assets/6c247a2f-c739-4851-ace5-dc4a87ee5112
 
 # **FAQ Backend Project**
 
+# Live Deno link: https://faq-project-rwxh.onrender.com/
+
 This is a backend project for managing FAQs with multi-language translation support.
 
 ## **Features**
